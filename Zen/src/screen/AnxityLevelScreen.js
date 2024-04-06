@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Header from '../../components/Header';
 import Slider from '@react-native-community/slider';
 
-Header;
+
 const AnxityLevelScreen = ({navigation}) => {
   const [anxietyLevel, setAnxietyLevel] = useState(0);
   const [idealLevel, setIdealLevel] = useState(0);
@@ -64,7 +64,7 @@ const AnxityLevelScreen = ({navigation}) => {
             {'SAD Coins = Anxious level - Ideal level'}
           </Text>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ActivityScreen')}>
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
       </View>
@@ -91,11 +91,7 @@ const styles = StyleSheet.create({
   silderView: {
     marginVertical: 30,
   },
-  bodyText: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: 'black',
-  },
+ 
   button: {
     width: 200,
     backgroundColor: '#D2B48C',
