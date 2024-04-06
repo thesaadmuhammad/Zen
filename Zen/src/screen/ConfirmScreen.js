@@ -69,7 +69,7 @@ const ConfirmScreen = ({navigation}) => {
      )}
      /> 
    </View>
-   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardScreen')}>
+   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ProgessTracker')}>
       <Text style={styles.buttonText}>Make Challenge</Text>
     </TouchableOpacity>  
    </View>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#D2B48C',
         height: 33,
         borderRadius: 5,
-        margin: "30%",
+        margin: "0%",
         marginHorizontal: 66,
       },
       buttonText: {
