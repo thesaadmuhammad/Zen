@@ -9,7 +9,7 @@ const Header = ({title, navigation}) => {
       <View style={styles.view}>
         {
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Icon name="arrow-back-ios" size={40} color="black" />
+            <Icon name="arrow-back-ios" size={30} color="black" />
           </TouchableOpacity>
         }
       </View>
