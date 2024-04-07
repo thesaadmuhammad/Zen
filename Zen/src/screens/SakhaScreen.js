@@ -74,7 +74,7 @@ const SakhaScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <SafeAreaProvider>
-        <Header title="सखा" navigation={'navigation'} />
+        <Header title="सखा🫂" navigation={'navigation'} />
 
         <ScrollView style={styles.scrollView}>
           {messages.map((message, index) => (
