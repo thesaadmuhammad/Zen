@@ -48,7 +48,7 @@ const ProgessTracker = ({navigation}) => {
     }
   };
   const handleDone = () => {
-    if (selectedActivities.length === ACTIVITY_LIST.length) {
+    if (selectedActivities.length === finalls.length) {
       navigation.navigate('WinnerScreen');
     } else {
       Alert.alert('Incomplete Activities', 'Please complete all activities before proceeding.');

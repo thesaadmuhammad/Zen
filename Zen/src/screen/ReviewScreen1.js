@@ -41,7 +41,7 @@ const handleSliderChange = value => {
             {'SAD Coins = Anxious level - Ideal level'}
           </Text>
         </View> */}
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ActivityScreen')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('HomeScreen')}>
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
       </View>
