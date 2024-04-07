@@ -7,7 +7,10 @@ const SakhaHomeScreen = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.Header}>
         <View style={styles.HeaderText}>
-          <Text style={styles.HeadText}>Home</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+        <Text style={styles.HeadText}>Home
+          </Text>
+        </TouchableOpacity>
           <Text style={styles.selectText}>Sakha</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('SakhaScreen')}>
@@ -31,7 +34,8 @@ const SakhaHomeScreen = ({navigation}) => {
       <Text style={styles.text5}>Connect with Therapist</Text>
       <TouchableOpacity
         style={styles.beigeButton}
-        onPress={() => navigation.goBack()}>
+        onPress={() =>
+          navigation.navigate('SakhaHomeScreen')}>
         <Text style={styles.text6}>Connect</Text>
       </TouchableOpacity>
     </View>

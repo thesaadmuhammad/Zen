@@ -5,6 +5,7 @@ import {
   ScrollView,
   Pressable,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import Header from '../../src/components/Header.js';
 import React, {useState} from 'react';
@@ -45,7 +46,7 @@ const SakhaScreen = ({navigation}) => {
             role: 'user',
             parts: [
               {
-                text: 'Hello, You are my Stress, anxiety and depression therapist.',
+                text: 'Hello, You are my Stress, anxiety and depression therapist and also recommend movies based on mood only if asked.',
               },
             ],
           },
@@ -74,7 +75,7 @@ const SakhaScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <SafeAreaProvider>
-        <Header title="सखा🫂" navigation={'navigation'} />
+        <Header title="सखा" navigation={navigation} />
 
         <ScrollView style={styles.scrollView}>
           {messages.map((message, index) => (
@@ -100,6 +101,13 @@ const SakhaScreen = ({navigation}) => {
           </Pressable>
         </View>
       </SafeAreaProvider>
+      <TouchableOpacity
+          style={styles.button}
+          onPress={() =>
+            navigation.navigate('HomeScreern')
+          }>
+          <Text style={styles.buttonText}>Make Challenge</Text>
+        </TouchableOpacity>
     </View>
   );
 };
@@ -120,8 +128,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   message: {
-    fontSize: 20, // Adjust the font size here as needed
-    // Other styles for the message text
+    fontSize: 20,
   },
   row: {
     height: 60,
