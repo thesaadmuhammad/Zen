@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const SakhaHomeScreen = () => {
+const SakhaHomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.Header}>
@@ -10,7 +10,7 @@ const SakhaHomeScreen = () => {
           <Text style={styles.HeadText}>Home</Text>
           <Text style={styles.selectText}>Sakha</Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate('SakhaScreen')}>
           <Icon name="timelapse" size={40} color="black" />
         </TouchableOpacity>
       </View>
@@ -24,7 +24,7 @@ const SakhaHomeScreen = () => {
         </View>
         <TouchableOpacity
           style={styles.whiteButton}
-          onPress={() => navigation.goBack()}>
+          onPress={() => navigation.navigate('SakhaScreen')}>
           <Text style={styles.text4}>Let's chat</Text>
         </TouchableOpacity>
       </View>
@@ -37,7 +37,6 @@ const SakhaHomeScreen = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     height: '100%',

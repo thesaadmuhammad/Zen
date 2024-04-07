@@ -14,7 +14,11 @@ const HomeScreen = ({navigation}) => {
       <View style={styles.Header}>
         <View style={styles.HeaderText}>
           <Text style={styles.selectText}>Home</Text>
-          <Text style={styles.HeadText}>Sakha</Text>
+          <Text
+            style={styles.HeadText}
+            onPress={() => navigation.navigate('SakhaHomeScreen')}>
+            Sakha
+          </Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('ProgessTracker')}>
           <Icon name="timelapse" size={40} color="black" />

@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const genAI = new GoogleGenerativeAI('AIzaSyCXH0pDnwUA_7MS2134pPqDtojnJMDYfLA');
 
-const SakhaScreen = () => {
+const SakhaScreen = ({navigation}) => {
   const [text, setText] = useState('');
 
   const [messages, setMessages] = useState([]);

@@ -13,8 +13,8 @@ import ProgessTracker from './src/screen/ProgessTracker';
 import WinnerScreen from './src/screen/WinnerScreen';
 import ReviewScreen1 from './src/screen/ReviewScreen1';
 import ReviewScreen2 from './src/screen/ReviewScreen2';
-
-//
+import SakhaScreen from './src/screens/SakhaScreen';
+import SakhaHomeScreen from './src/screens/SakhaHomeScreen';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -33,6 +33,8 @@ const App = () => {
         <Stack.Screen name="WinnerScreen" component={WinnerScreen} />
         <Stack.Screen name="ReviewScreen1" component={ReviewScreen1} />
         <Stack.Screen name="ReviewScreen2" component={ReviewScreen2} />
+        <Stack.Screen name="SakhaHomeScreen" component={SakhaHomeScreen} />
+        <Stack.Screen name="SakhaScreen" component={SakhaScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
