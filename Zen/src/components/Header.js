@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import React from 'react';
 import {Surface, Title} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -24,23 +24,23 @@ const Header = ({title, navigation}) => {
         }
       </View> */}
     </Surface>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 const styles = StyleSheet.create({
-    header: {
-      height: "8%",
-      elevation: 8,
+  header: {
+    height: '8%',
+    elevation: 8,
     //   justifyContent: 'space-between',
-      alignItems: 'center',
-      flexDirection: 'row',
-      backgroundColor: '#D2B48C',
-    },
-    view: {
-      marginHorizontal: 16,
-      alignItems: 'center',
-      flexDirection: 'row',
-    },
-  });
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: '#D2B48C',
+  },
+  view: {
+    marginHorizontal: 16,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+});

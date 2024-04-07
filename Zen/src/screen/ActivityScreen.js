@@ -36,22 +36,20 @@ const ACTIVITY_LIST = [
 
 const ActivityScreen = ({navigation}) => {
   let route = useRoute();
-  let coins = route.params?.coin;
+  const [coins, setCoins] = useState(route.params?.coin);
+
   const [selectedActivities, setSelectedActivities] = useState([]);
 
   const toggleActivity = (id, credit) => {
-    const index = selectedActivities.findIndex(item => item === id);
-    if (index === -1) {
-      setSelectedActivities([...selectedActivities, id]);
+    if (selectedActivities.includes(id)) {
+      setSelectedActivities(
+        selectedActivities.filter(activity => activity !== id),
+      );
+      setCoins(coins + credit);
     } else {
-      const updatedActivities = [...selectedActivities];
-      updatedActivities.splice(index, 1);
-      setSelectedActivities(updatedActivities);
+      setSelectedActivities([...selectedActivities, id]);
+      setCoins(coins - credit);
     }
-    if (coins >= credit) {
-      coins = coins - credit;
-    }
-    console.log(coins);
   };
   const results = ACTIVITY_LIST.filter(activity =>
     selectedActivities.includes(activity.id),
