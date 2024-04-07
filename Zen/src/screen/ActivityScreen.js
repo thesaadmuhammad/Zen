@@ -5,32 +5,104 @@ import Acitivity from '../components/Acitivity';
 
 
 const ACTIVITY_LIST= [
-    {
-      id: '1',
-      name: 'Going for a walk outside',
-      credit:"2" ,
-      
-      
-
-    },
-    {
-      id: '2',
-      name: 'Take a deep breath',
-      credit:"1" ,
+  {
+    id: '1',
+    name: 'Going for a walk outside',
+    credit:"2" ,
     
-    },
-    {
-      id: '3',
-      name: 'Listen your fav music',
-      credit:"2" ,
+    
 
-    },
-    {
-      id: '4',
-      name: 'Progressive muscle relaxation',
-      credit:"4" ,
-    },
-  ];
+  },
+  {
+    id: '2',
+    name: 'Take a deep breath',
+    credit:"1" ,
+  
+  },
+  {
+    id: '3',
+    name: 'Listen your fav music 4',
+    credit:"2" ,
+
+  },
+  {
+    id: '4',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '5',
+    name: 'Taking a bath',
+    credit:"3" ,
+  },
+  {
+    id: '6',
+    name: 'lighting candles',
+    credit:"1" ,
+  },
+  {
+    id: '7',
+    name: 'Reading a good book/Comics',
+    credit:"4" ,
+  },
+  {
+    id: '8',
+    name: 'Exercising',
+    credit:"5" ,
+  },
+  {
+    id: '9',
+    name: 'Preparing a healthy meal',
+    credit:"4" ,
+  },
+  {
+    id: '10',
+    name: 'Stretching before bed',
+    credit:"3" ,
+  },
+  {
+    id: '11',
+    name: 'getting a massage ',
+    credit:"2" ,
+  },
+  
+  {
+    id: '12',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '13',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '14',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '15',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '16',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '17',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  {
+    id: '18',
+    name: 'Progressive muscle relaxation',
+    credit:"4" ,
+  },
+  
+];
 
 const ActivityScreen = ({navigation}) => {
     const [selectedActivities, setSelectedActivities] = useState([]);
@@ -68,14 +140,12 @@ const ActivityScreen = ({navigation}) => {
           </Pressable>
          )}
          /> 
-       </View>
+       </View>    
        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardScreen')}>
           <Text style={styles.buttonText}>Next</Text>
-        </TouchableOpacity>
-        
-       
-       </View>
-       
+        </TouchableOpacity>  
+    </View>
+      
     </View>
   )
 }
@@ -95,8 +165,9 @@ const styles = StyleSheet.create({
         marginVertical:5
       },
       body:{
-        margin:10,
-        padding:8
+       
+        padding:8,
+        height:"70%"
       },
       bodyUpper:{
         paddingVertical:20,
@@ -117,7 +188,7 @@ const styles = StyleSheet.create({
         height: 33,
         borderRadius: 5,
         margin: 10,
-        marginHorizontal: 66,
+        marginHorizontal: 80,
       },
       buttonText: {
         fontSize: 20,
@@ -125,4 +196,7 @@ const styles = StyleSheet.create({
         color: 'black',
         padding: 2,
       },
+      bodylower:{
+        height:"80%"
+      }
 })

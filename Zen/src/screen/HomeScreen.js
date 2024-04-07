@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.selectText}>Home</Text>
           <Text style={styles.HeadText}>Sakha</Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate('ProgessTracker')}>
           <Icon name="timelapse" size={40} color="black" />
         </TouchableOpacity>
       </View>

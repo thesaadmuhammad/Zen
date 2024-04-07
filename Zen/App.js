@@ -12,7 +12,6 @@ import RewardScreen from './src/screen/RewardScreen';
 import ConfirmScreen from './src/screen/ConfirmScreen';
 import ProgessTracker from './src/screen/ProgessTracker';
 import WinnerScreen from './src/screen/WinnerScreen';
-import RewardAlertScreen from './src/screen/RewardAlertScreen';
 import ReviewScreen1 from './src/screen/ReviewScreen1';
 import ReviewScreen2 from './src/screen/ReviewScreen2';
 
@@ -33,7 +32,6 @@ const App = () => {
         <Stack.Screen name="ConfirmScreen" component={ConfirmScreen} />
         <Stack.Screen name="ProgessTracker" component={ProgessTracker} />
         <Stack.Screen name="WinnerScreen" component={WinnerScreen} />
-        <Stack.Screen name="RewardAlertScreen" component={RewardAlertScreen} />
         <Stack.Screen name="ReviewScreen1" component={ReviewScreen1} />
         <Stack.Screen name="ReviewScreen2" component={ReviewScreen2} />
       </Stack.Navigator>
