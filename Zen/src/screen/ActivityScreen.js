@@ -15,7 +15,7 @@ const ACTIVITY_LIST = [
   {
     id: '1',
     name: 'Going for a walk outside',
-    credit: 2,
+    credit: 3,
   },
   {
     id: '2',
@@ -30,7 +30,17 @@ const ACTIVITY_LIST = [
   {
     id: '4',
     name: 'Progressive muscle relaxation',
-    credit: 2,
+    credit: 4,
+  },
+  {
+    id: '5',
+    name: 'Reading a good Book',
+    credit: 4,
+  },
+  {
+    id: '6',
+    name: 'Watch a ted talks!',
+    credit: 4,
   },
 ];
 
@@ -48,7 +58,12 @@ const ActivityScreen = ({navigation}) => {
       setCoins(coins + credit);
     } else {
       setSelectedActivities([...selectedActivities, id]);
-      setCoins(coins - credit);
+      if ((coins - credit)>0){
+        setCoins(coins - credit);
+      }
+      else{
+        setCoins(0)
+      }
     }
   };
   const results = ACTIVITY_LIST.filter(activity =>
