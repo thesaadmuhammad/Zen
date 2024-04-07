@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
 
   scrollView: {
     height: '100%',
+    marginBottom: 60,
   },
   send: {
     paddingTop: 10,
