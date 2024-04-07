@@ -3,6 +3,7 @@ import React ,{useState} from 'react'
 import Header from '../../components/Header';
 import Acitivity from '../components/Acitivity';
 import Reward from '../components/Reward';
+import { useRoute } from "@react-navigation/native";
 
 
 const ACTIVITY_LIST= [
@@ -37,6 +38,8 @@ const ACTIVITY_LIST= [
   ];
 
 const ProgessTracker = ({navigation}) => {
+  let route = useRoute();
+  let finalls = route.params?.final;
   const [selectedActivities, setSelectedActivities] = useState([]);
     
   const handlePress = (id) => {
@@ -61,7 +64,7 @@ const ProgessTracker = ({navigation}) => {
        </View>
        <View style={styles.bodylower}>
        <FlatList
-            data={ACTIVITY_LIST}
+            data={finalls}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
               <Pressable

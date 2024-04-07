@@ -50,8 +50,8 @@ const ActivityScreen = ({navigation}) => {
     }
     if (coins >= credit) {
       coins = coins - credit;
-      console.log(coins);
     }
+    console.log(coins);
   };
   const results = ACTIVITY_LIST.filter(activity =>
     selectedActivities.includes(activity.id),

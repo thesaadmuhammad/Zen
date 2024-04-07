@@ -16,8 +16,8 @@ let REWARD_LIST= [
 
 const ConfirmScreen = ({navigation}) => {
   let route = useRoute();
-  let aclist = route.params?.actlist;
-  console.log(aclist)
+  let theaclist = route.params?.myaclist;
+  console.log(theaclist)
   return (
     <View style={styles.container}>
     <Header title="" navigation={navigation} />
@@ -27,7 +27,7 @@ const ConfirmScreen = ({navigation}) => {
    </View>
    <View style={styles.bodylower}>
    <FlatList
-     data={aclist}
+     data={theaclist}
      keyExtractor={item => item.id}
      renderItem={({item}) => (
         <Pressable
@@ -57,7 +57,7 @@ const ConfirmScreen = ({navigation}) => {
      )}
      /> 
    </View>
-   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ProgessTracker')}>
+   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ProgessTracker',{"final":theaclist})}>
       <Text style={styles.buttonText}>Make Challenge</Text>
     </TouchableOpacity>  
    </View>
