@@ -79,11 +79,9 @@ const ActivityScreen = ({navigation}) => {
        </View>
        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardScreen',{"activitylist":results})}>
           <Text style={styles.buttonText}>Next</Text>
-        </TouchableOpacity>
-        
-       
-       </View>
-       
+        </TouchableOpacity>  
+    </View>
+      
     </View>
   )
 }
@@ -103,8 +101,9 @@ const styles = StyleSheet.create({
         marginVertical:5
       },
       body:{
-        margin:10,
-        padding:8
+       
+        padding:8,
+        height:"70%"
       },
       bodyUpper:{
         paddingVertical:20,
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
         height: 33,
         borderRadius: 5,
         margin: 10,
-        marginHorizontal: 66,
+        marginHorizontal: 80,
       },
       buttonText: {
         fontSize: 20,
@@ -133,4 +132,7 @@ const styles = StyleSheet.create({
         color: 'black',
         padding: 2,
       },
+      bodylower:{
+        height:"80%"
+      }
 })

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,FlatList ,Pressable,TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, FlatList, Pressable, TouchableOpacity, Alert } from 'react-native';
 import React ,{useState} from 'react'
 import Header from '../../components/Header';
 import Acitivity from '../components/Acitivity';
@@ -22,7 +22,7 @@ const ACTIVITY_LIST= [
     },
     {
       id: '3',
-      name: 'Listen your fav music',
+      name: 'Listen your fav music 4',
       credit:"2" ,
 
     },
@@ -31,6 +31,9 @@ const ACTIVITY_LIST= [
       name: 'Progressive muscle relaxation',
       credit:"4" ,
     },
+    
+
+    
   ];
 
 const ProgessTracker = ({navigation}) => {
@@ -39,6 +42,13 @@ const ProgessTracker = ({navigation}) => {
   const handlePress = (id) => {
     if (!selectedActivities.includes(id)) {
       setSelectedActivities([...selectedActivities, id]);
+    }
+  };
+  const handleDone = () => {
+    if (selectedActivities.length === ACTIVITY_LIST.length) {
+      navigation.navigate('WinnerScreen');
+    } else {
+      Alert.alert('Incomplete Activities', 'Please complete all activities before proceeding.');
     }
   };
   return (
@@ -63,7 +73,7 @@ const ProgessTracker = ({navigation}) => {
             )}
           /> 
        </View>
-       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardWinnerScreen')}>
+       <TouchableOpacity style={styles.button} onPress={handleDone} >
           <Text style={styles.buttonText}>Done</Text>
         </TouchableOpacity>
         
@@ -119,4 +129,7 @@ const styles = StyleSheet.create({
         color: 'black',
         padding: 2,
       },
+      bodylower:{
+
+      }
 })
