@@ -22,7 +22,7 @@ const SakhaScreen = ({navigation}) => {
   const Card = ({message}) => {
     return (
       <View style={styles.card}>
-        <Text>{message}</Text>
+        <Text style={styles.message}>{message}</Text>
       </View>
     );
   };
@@ -74,16 +74,17 @@ const SakhaScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <SafeAreaProvider>
-        <Header title="सखा" onPress={{}} />
+        <Header title="सखा🫂" navigation={'navigation'} />
 
         <ScrollView style={styles.scrollView}>
           {messages.map((message, index) => (
-            <Card key={index} message={message} />
+            <Card key={index} message={message} 
+               />
           ))}
         </ScrollView>
         <View style={styles.row}>
           <TextInput
-            style={{height: 40, paddingTop: 10}}
+            style={{height: 40, paddingTop: 10 }}
             placeholder="Type your message here.."
             onChangeText={newText => setText(newText)}
             value={text}
@@ -111,12 +112,16 @@ const styles = StyleSheet.create({
   },
   card: {
     alignSelf: 'flex-end',
-    width: '50%',
-    backgroundColor: '#CBA46F',
+    width: '70%',
+    backgroundColor: '#D2B48C',
     borderRadius: 10,
     marginHorizontal: 10,
     marginVertical: 25,
     padding: 10,
+  },
+  message: {
+    fontSize: 20, // Adjust the font size here as needed
+    // Other styles for the message text
   },
   row: {
     height: 60,
@@ -125,12 +130,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     width: '100%',
   },
 
   scrollView: {
     height: '100%',
+    marginBottom: 60,
   },
   send: {
     paddingTop: 10,
