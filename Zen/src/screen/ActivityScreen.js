@@ -56,6 +56,7 @@ const ActivityScreen = ({navigation}) => {
   const results = ACTIVITY_LIST.filter(activity =>
     selectedActivities.includes(activity.id),
   );
+
   return (
     <View style={styles.container}>
       <Header title="" navigation={navigation} />
