@@ -68,7 +68,7 @@ const RewardScreen = ({navigation}) => {
      )}
      /> 
    </View>
-   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ConfirmScreen',{"aclist":aclist})}>
+   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ConfirmScreen',{"myaclist":aclist})}>
       <Text style={styles.buttonText}>Next</Text>
     </TouchableOpacity>
     
