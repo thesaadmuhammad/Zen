@@ -3,33 +3,21 @@ import React from 'react'
 import Header from '../../components/Header'
 import Acitivity from '../components/Acitivity';
 import Reward from '../components/Reward';
+import { useRoute } from "@react-navigation/native";
 
-const REWARD_LIST= [
+let REWARD_LIST= [
     {
       id: '1',
       name: 'Go eat Icecream',
     },
   ];
-  const ACTIVITY_LIST= [
-    {
-      id: '1',
-      name: 'Going for a walk outside',
-      credit:"2" ,
-      
-      
-
-    },
-    {
-      id: '2',
-      name: 'Take a deep breath',
-      credit:"1" ,
-    
-    },
-
-  ];
+  let ACTIVITY_LIST= [];
 
 
 const ConfirmScreen = ({navigation}) => {
+  let route = useRoute();
+  let aclist = route.params?.actlist;
+  console.log(aclist)
   return (
     <View style={styles.container}>
     <Header title="" navigation={navigation} />
@@ -39,7 +27,7 @@ const ConfirmScreen = ({navigation}) => {
    </View>
    <View style={styles.bodylower}>
    <FlatList
-     data={ACTIVITY_LIST}
+     data={aclist}
      keyExtractor={item => item.id}
      renderItem={({item}) => (
         <Pressable

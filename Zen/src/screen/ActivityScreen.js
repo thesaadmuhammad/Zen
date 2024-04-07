@@ -2,13 +2,14 @@ import { StyleSheet, Text, View,FlatList ,Pressable,TouchableOpacity} from 'reac
 import React ,{useState} from 'react'
 import Header from '../../components/Header';
 import Acitivity from '../components/Acitivity';
+import { useRoute } from "@react-navigation/native";
 
 
 const ACTIVITY_LIST= [
-    {
+  {
       id: '1',
       name: 'Going for a walk outside',
-      credit:"2" ,
+      credit:2 ,
       
       
 
@@ -16,26 +17,28 @@ const ACTIVITY_LIST= [
     {
       id: '2',
       name: 'Take a deep breath',
-      credit:"1" ,
+      credit:1 ,
     
     },
     {
       id: '3',
       name: 'Listen your fav music',
-      credit:"2" ,
+      credit:2,
 
     },
     {
       id: '4',
       name: 'Progressive muscle relaxation',
-      credit:"4" ,
+      credit:2 ,
     },
   ];
 
 const ActivityScreen = ({navigation}) => {
+    let route = useRoute();
+    let coins = route.params?.coin;
     const [selectedActivities, setSelectedActivities] = useState([]);
 
-    const toggleActivity = (id) => {
+    const toggleActivity = (id,credit) => {
       const index = selectedActivities.findIndex((item) => item === id);
       if (index === -1) {
         setSelectedActivities([...selectedActivities, id]);
@@ -44,14 +47,19 @@ const ActivityScreen = ({navigation}) => {
         updatedActivities.splice(index, 1);
         setSelectedActivities(updatedActivities);
       }
+      if (coins>=credit){
+        coins = coins-credit
+        console.log(coins)
+      }
     };
+    const results =  ACTIVITY_LIST.filter(activity => selectedActivities.includes(activity.id));
   return (
     <View style={styles.container}>
         <Header title="" navigation={navigation} />
        <View style={styles.body}> 
        <View style={styles.bodyUpper}>
         <Text  style={styles.bodyText} >{"Your SAD Credit is : "}</Text>
-        <Text  style={{fontSize:25 , color:"black"}}>{"6"}</Text>
+        <Text  style={{fontSize:25 , color:"black"}}>{coins}</Text>
         <Text  style={{fontSize:18 ,color:"black" , marginVertical:20 }}>{"Challenge  : Spend all the Coins Today  "}</Text>
         <Text  style={{fontSize:20 ,color:"black",marginVertical:1 }}>{"Select below activities : "}</Text>
        </View>
@@ -61,7 +69,7 @@ const ActivityScreen = ({navigation}) => {
          keyExtractor={item => item.id}
          renderItem={({item}) => (
             <Pressable
-            onPress={() => toggleActivity(item.id)}
+            onPress={() => toggleActivity(item.id,item.credit)}
             style={[styles.activityCard, { backgroundColor: selectedActivities.includes(item.id) ? '#FEDDB3' : 'white' }]}
           >
             <Acitivity activity={item} />
@@ -69,7 +77,7 @@ const ActivityScreen = ({navigation}) => {
          )}
          /> 
        </View>
-       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardScreen')}>
+       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RewardScreen',{"activitylist":results})}>
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
         

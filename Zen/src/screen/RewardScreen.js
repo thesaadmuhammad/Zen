@@ -2,6 +2,7 @@ import { StyleSheet, Text, View ,FlatList ,TouchableOpacity ,Pressable} from 're
 import React ,{useState} from 'react'
 import Header from '../../components/Header';
 import Reward from '../components/Reward';
+import { useRoute } from "@react-navigation/native";
 
 
 const REWARD_LIST= [
@@ -32,6 +33,9 @@ const REWARD_LIST= [
   ];
 
 const RewardScreen = ({navigation}) => {
+    let route = useRoute();
+    let aclist = route.params?.activitylist;
+    console.log(aclist)
     const [selectedReward, setSelectedReaward] = useState([]);
     const toggleActivity = (id) => {
         const index = selectedReward.findIndex((item) => item === id);
@@ -64,7 +68,7 @@ const RewardScreen = ({navigation}) => {
      )}
      /> 
    </View>
-   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ConfirmScreen')}>
+   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ConfirmScreen',{"aclist":aclist})}>
       <Text style={styles.buttonText}>Next</Text>
     </TouchableOpacity>
     

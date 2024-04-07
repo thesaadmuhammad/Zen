@@ -30,7 +30,7 @@ const HomeScreen = ({navigation}) => {
         <View style={{marginVertical: '10%'}}>
           <TouchableOpacity
             style={styles.tabs}
-            onPress={() => navigation.navigate('AnxityLevelScreen')}>
+            onPress={() => navigation.navigate('AnxityLevelScreen',{id:"Anxious"})}>
             <MaterialCommunityIcons
               name="emoticon-sad-outline"
               size={29}
@@ -40,9 +40,15 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabs}
-            onPress={() => navigation.navigate('AnxityLevelScreen')}>
+            onPress={() => navigation.navigate('AnxityLevelScreen',{ id: "Stressed" })}>
             <EntypoIcons name="emoji-sad" size={25} color="black" />
             <Text style={styles.tabText}>{'Stressed'}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.tabs}
+            onPress={() => navigation.navigate('AnxityLevelScreen',{ id: "Depressed" })}>
+            <EntypoIcons name="emoji-sad" size={25} color="black" />
+            <Text style={styles.tabText}>{'Depressed'}</Text>
           </TouchableOpacity>
         </View>
       </View>
